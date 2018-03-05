@@ -2,8 +2,8 @@
 
 $servername = "localhost";
 $database = "calendar";
-$username = "root";
-$password = "";
+$username = "emil";
+$password = "secret";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);

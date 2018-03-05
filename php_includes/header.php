@@ -13,6 +13,7 @@
             <ul class="nav navbar-nav navbar-right">
             <?php if(isset($_SESSION['usr_id'])) { ?>
                 <li><p class="navbar-text">Welcome <?= $_SESSION['usr_name']; ?></p></li>
+                <li><a href="home.php">Home</a></li>
                 <li><a href="logout.php">Log Out</a></li>
             <?php } else { ?>
                 <li><a href="login.php">Login</a></li>
