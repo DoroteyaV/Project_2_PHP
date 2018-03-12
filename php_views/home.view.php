@@ -51,11 +51,11 @@
                                     <td>button button button</td>
                                 </tr>
                                 <tr>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
+                                    <td><?= $task_title = $_POST['task_title'] ?></td>
+                                    <td><?= $task_title = $_POST['task_description'] ?></td>
+                                    <td><?= $task_title = $_POST['task_duedate'] ?></td>
+                                    <td><?=  ?></td>
+                                    <td><?=  ?></td>
                                 </tr>
                             </tbody>
                         </table>
