@@ -12,6 +12,8 @@
 
         <!-- TODO some image(s) and/or design for the homepage -->
 
+        <img src="img/to-do.jpg" alt="to-do-list"  class="img-rounded img-responsive center-block" >
+
         <?php include 'php_includes/footer.php'; ?>
     </body>
 </html>

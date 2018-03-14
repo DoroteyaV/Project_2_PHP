@@ -36,7 +36,7 @@ if (empty($_POST['submit'])) {
 		echo "Successfully added new task!";
 	} else {
 	 	echo "Not successful!";
-	 	echo "<p><a href='index.php'>Read</a></p>";
+	 	echo "<p><a href='home.view.php'>Home</a></p>";
 	}
 
 require 'php_views/home.view.php';

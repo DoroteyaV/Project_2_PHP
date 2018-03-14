@@ -43,10 +43,10 @@ if (empty($_POST['submit'])) {
 	$result = mysqli_query($conn, $update_query);
 	if ($result) {
 		echo "Successfully updated task!";
-		echo "<a href = 'index.php'>Read</a>";
+		echo "<a href = 'home.view.php'>Home</a>";
 	} else {
 		echo "Not successfully updated!";
-		echo "<p><a href='index.php'>Read</a></p>";
+		echo "<p><a href='home.view.php'>Home</a></p>";
 	}
 }
 
