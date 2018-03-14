@@ -8,13 +8,16 @@
     <body>
         <?php include 'php_includes/header.php'; ?>
 
-        <h1 class="text-center">Hello <?= $_SESSION['usr_name']; ?>!</h1>
+        <h1 class="text-center">Hello, <?= $_SESSION['usr_name']; ?>!</h1>
 
         <!-- TODO tasks table CRUD view -->
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Scheduled Tasks
-                    <a href="" title="Add New Task"><button class="btn btn-success btn-sm pull-right"><i class="fa fa-plus" aria-hidden="true"></i> Add New Task</button></a>
+                    <a href="create.php" title="Add New Task"><button class="btn btn-success btn-sm pull-right"><i class="fa fa-plus" aria-hidden="true"></i> Add New Task</button></a>
+                    <!-- SEARCH AREA -->
+                    <input type="text" name="text" placeholder="Search" value="">
+                    <a href="search.php" title="Search"><button class="btn btn-success btn-sm pull-right"><i class="fa fa-plus" aria-hidden="true"></i>Search</button></a>
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -32,8 +35,8 @@
                                     <td>COMPLETED</td>
                                     <td>
                                         <a href="" title="View Task"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                        <a href="" title="Edit Task"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                        <a href="" title="Delete Task"><button class="btn btn-primary btn-xs"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button></a>
+                                        <a href="update.php" title="Edit Task"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                        <a href="delete.php" title="Delete Task"><button class="btn btn-primary btn-xs"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button></a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -52,10 +55,10 @@
                                 </tr>
                                 <tr>
                                     <td><?= $task_title = $_POST['task_title'] ?></td>
-                                    <td><?= $task_title = $_POST['task_description'] ?></td>
-                                    <td><?= $task_title = $_POST['task_duedate'] ?></td>
-                                    <td><?=  ?></td>
-                                    <td><?=  ?></td>
+                                    <td><?= $task_description = $_POST['task_description'] ?></td>
+                                    <td><?= $due_date = $_POST['due_date'] ?></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
