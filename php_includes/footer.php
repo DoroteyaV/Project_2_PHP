@@ -1,6 +1,6 @@
 <footer>
-    <div class="well text-center">
-        <div class="container-fluid">
+    <div class="container-fluid text-center">
+        <div class="row well">
             PHP Developers: Doroteya & Emil.
         </div>
     </div>

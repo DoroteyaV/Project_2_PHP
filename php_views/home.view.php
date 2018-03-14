@@ -7,7 +7,6 @@
     </head>
     <body>
         <?php include 'php_includes/header.php'; ?>
-
         <h1 class="text-center">Hello, <?= $_SESSION['usr_name']; ?>!</h1>
 
         <!-- TODO tasks table CRUD view -->
