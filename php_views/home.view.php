@@ -15,8 +15,9 @@
                 <div class="panel-heading">Scheduled Tasks
                     <a href="create.php" title="Add New Task"><button class="btn btn-success btn-sm pull-right"><i class="fa fa-plus" aria-hidden="true"></i> Add New Task</button></a>
                     <!-- SEARCH AREA -->
-                    <input type="text" name="text" placeholder="Search" value="">
-                    <a href="search.php" title="Search"><button class="btn btn-success btn-sm pull-right"><i class="fa fa-plus" aria-hidden="true"></i>Search</button></a>
+                   
+                    <a href="search.php" title="Search"><button class="btn btn-default btn-sm pull-right"><i aria-hidden="true"></i>Search</button></a>
+                     <input type="text" name="text" placeholder="Search" value="" class="pull-right ">
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -52,18 +53,19 @@
                                     <td>COMING UP</td>
                                     <td>button button button</td>
                                 </tr>
-                                <tr>
-                                    <td><?= $task_title = $_POST['task_title'] ?></td>
-                                    <td><?= $task_description = $_POST['task_description'] ?></td>
-                                    <td><?= $due_date = $_POST['due_date'] ?></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div>       
                 </div>
             </div>
+            <div>
+                Choose tasks by:
+                <select name="choose_tasks">
+                    <option value="0">Date in DB</option>
+                    <option value="1">Due Date</option>
+                    <option value="2">Title: A-Z</option>
+                </select>
+            </div> 
         </div>
 
         <?php include 'php_includes/footer.php'; ?>

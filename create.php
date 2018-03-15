@@ -29,15 +29,15 @@ if (empty($_POST['submit'])) {
 	$task_title = $_POST['task_title'];
 	$task_description = $_POST['task_description'];
 	$due_date = $_POST['due_date'];
-	$insert_query = "INSERT INTO tasks (task_title, task_description, due_date) VALUES (' " . $task_title . $task_description . $due_date . " ')";
+	$insert_query = "INSERT INTO tasks (task_title, task_description, due_date) VALUES ('".$task_title."', '".$task_description."', '".$due_date."')";
 	$result = mysqli_query($conn, $insert_query);
-	
-} if ($result) {
+	 if ($result) {
 		echo "Successfully added new task!";
+		echo "<p><a href='home.php'>Home</a></p>";
 	} else {
 	 	echo "Not successful!";
-	 	echo "<p><a href='home.view.php'>Home</a></p>";
+	 	echo "<p><a href='home.php'>Home</a></p>";
+	}
 	}
 
-require 'php_views/home.view.php';
 ?>
