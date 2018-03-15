@@ -18,32 +18,23 @@ if ($result) {
 			echo "<td>" . $i++ . "</td>";
 			echo "<td>" . $row['task_title'] . "</td>";
 			echo "<td>" . $row['task_description'] . "</td>";
-
-			//echo "<td>" . $row['due_date'] . "</td>";
-			// $date1=date('d_m_y');
-			// $date2='31_12_11';
-			// if(strtotime($date1) < strtotime($date2))
-			//    echo '1 is small ='.strtotime($date1).','.$date1;
-			// else
-			//    echo '2 is small ='.strtotime($date2).','.$date2;
-			// $yearArray[] = date("Y-m-d", mktime(0,0,0,1,365,2008);
 			echo "<td>" . $row['due_date'] . "</td>";
 			 
 			$current_date = date("yyyy-m-d");
 					if(strtotime($row['due_date']) == strtotime($current_date)){
-						echo "TODAY";
+						echo "<td>TODAY</td>";
 					} 
-					elseif (strtotime($row['due_date']) < strtotime($current_date) - 6) {
-						echo "APPROACHING";
-					} elseif (strtotime($row['due_date']) < strtotime($current_date)) {
-						echo "COMING";
+					elseif (strtotime($row['due_date']) > strtotime($current_date) - 6) {
+						echo "<td>APPROACHING</td>";
 					} elseif (strtotime($row['due_date']) > strtotime($current_date)) {
-						echo "COMPLETED";
+						echo "<td>COMING</td>";
+					} elseif (strtotime($row['due_date']) < strtotime($current_date)) {
+						echo "<td>COMPLETED</td>";
 					}
 				
 			//echo "<td>" . $row['due_date'] . "</td>";
 			//<td> for buttons view, edit, delete </td>
-			echo "<td><a href='view.php?id=" . $row['task_id'] . "'>View</a></td>";
+			echo "<td><a href='view_task.php?id=" . $row['task_id'] . "'>View</a></td>";
 			echo "<td><a href='update.php?id=" . $row['task_id'] . " '>Update</a></td>";
 			echo "<td><a href='delete.php?id=" . $row['task_id'] . " '>Delete</a></td>";
 			echo "</tr>";
