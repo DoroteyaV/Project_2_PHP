@@ -26,10 +26,11 @@ if (empty($_POST['submit'])) {
 
 <?php
 } else {
+	$user_id = $_SESSION['usr_id'];
 	$task_title = $_POST['task_title'];
 	$task_description = $_POST['task_description'];
 	$due_date = $_POST['due_date'];
-	$insert_query = "INSERT INTO tasks (task_title, task_description, due_date) VALUES ('".$task_title."', '".$task_description."', '".$due_date."')";
+	$insert_query = "INSERT INTO tasks (user_id, task_title, task_description, due_date) VALUES ($user_id, '".$task_title."', '".$task_description."', '".$due_date."')";
 	$result = mysqli_query($conn, $insert_query);
 	 if ($result) {
 		echo "Successfully added new task!";

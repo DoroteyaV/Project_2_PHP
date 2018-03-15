@@ -34,9 +34,9 @@ if ($result) {
 				
 			//echo "<td>" . $row['due_date'] . "</td>";
 			//<td> for buttons view, edit, delete </td>
-			echo "<td><a href='view_task.php?id=" . $row['task_id'] . "'>View</a></td>";
-			echo "<td><a href='update.php?id=" . $row['task_id'] . " '>Update</a></td>";
-			echo "<td><a href='delete.php?id=" . $row['task_id'] . " '>Delete</a></td>";
+			echo "<td><a href='view_task.php?id=" . $row['id'] . "'>View</a></td>";
+			echo "<td><a href='update.php?id=" . $row['id'] . " '>Update</a></td>";
+			echo "<td><a href='delete.php?id=" . $row['id'] . " '>Delete</a></td>";
 			echo "</tr>";
 	}
 	echo "</table>";

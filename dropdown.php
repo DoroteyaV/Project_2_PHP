@@ -12,6 +12,7 @@ if(isset($_POST['choose_tasks'])){
 	$select_tasks = $_POST['choose_tasks'];
     switch ($select_tasks) {
         case '0':
+        	$date_DB = "SELECT "
             echo '';
             break;
         case '1':
