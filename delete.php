@@ -15,6 +15,9 @@ $result = mysqli_query($conn, $update_query);
 if ($result) {
 	echo "Successfully deleted!";
 	echo "<a href ='home.php'>Home</a>";
+} else {
+	echo "Not successfully deleted!";
+	echo "<a href ='home.php'>Home</a>";
 }
 
-require 'php_views/home.view.php';
+//require 'php_views/home.view.php';
