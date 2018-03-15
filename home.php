@@ -20,33 +20,34 @@ if ($result) {
 			echo "<td>" . $row['task_description'] . "</td>";
 
 			//echo "<td>" . $row['due_date'] . "</td>";
+			// $date1=date('d_m_y');
+			// $date2='31_12_11';
+			// if(strtotime($date1) < strtotime($date2))
+			//    echo '1 is small ='.strtotime($date1).','.$date1;
+			// else
+			//    echo '2 is small ='.strtotime($date2).','.$date2;
 			// $yearArray[] = date("Y-m-d", mktime(0,0,0,1,365,2008);
-			$due_date = $_POST['due_date'];
-			$date_explode = explode('-', $due_date);
-			$current_date = date("yyyy-m-d");
-				foreach ($due_date as $value) {
-					$date_explode;
-					if ($due_date = $current_date) {
-						echo "TODAY";
-						} elseif ($due_date < $current_date - 6 ) {
-						echo "APPROACHING";
-						} elseif ($due_date < $current_date) {
-						echo "COMING";
-						} elseif ($due_date > $current_date) {
-							echo "COMPLETED";
-						}
-				}
 			echo "<td>" . $row['due_date'] . "</td>";
+			 
+			$current_date = date("yyyy-m-d");
+					if(strtotime($row['due_date']) == strtotime($current_date)){
+						echo "TODAY";
+					} 
+					elseif (strtotime($row['due_date']) < strtotime($current_date) - 6) {
+						echo "APPROACHING";
+					} elseif (strtotime($row['due_date']) < strtotime($current_date)) {
+						echo "COMING";
+					} elseif (strtotime($row['due_date']) > strtotime($current_date)) {
+						echo "COMPLETED";
+					}
+				
+			//echo "<td>" . $row['due_date'] . "</td>";
 			//<td> for buttons view, edit, delete </td>
-			echo "<td><a href='view.php?id=" . $row['task_id'] . " '>View</a></td>";
+			echo "<td><a href='view.php?id=" . $row['task_id'] . "'>View</a></td>";
 			echo "<td><a href='update.php?id=" . $row['task_id'] . " '>Update</a></td>";
 			echo "<td><a href='delete.php?id=" . $row['task_id'] . " '>Delete</a></td>";
 			echo "</tr>";
 	}
 	echo "</table>";
 }
-$date_implode = implode('-', $date_explode);
-
-echo $date_implode;
-
 require 'php_views/home.view.php';

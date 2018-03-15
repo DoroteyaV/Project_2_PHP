@@ -15,8 +15,9 @@
                 <div class="panel-heading">Scheduled Tasks
                     <a href="create.php" title="Add New Task"><button class="btn btn-success btn-sm pull-right"><i class="fa fa-plus" aria-hidden="true"></i> Add New Task</button></a>
                     <!-- SEARCH AREA -->
-                    <input type="text" name="text" placeholder="Search" value="">
-                    <a href="search.php" title="Search"><button class="btn btn-success btn-sm pull-right"><i class="fa fa-plus" aria-hidden="true"></i>Search</button></a>
+                   
+                    <a href="search.php" title="Search"><button class="btn btn-default btn-sm pull-right"><i class="fa fa-plus" aria-hidden="true"></i>Search</button></a>
+                     <input type="text" name="text" placeholder="Search" value="" class="pull-right ">
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
