@@ -19,10 +19,12 @@
                     <label for="date">Due Date (format "yyyy-mm-dd")</label>
                     <input id="date" class="form-control" name="due_date" value="<?= $task['due_date']; ?>" required>
                 </div>
-                <input type="hidden" name="id" value="<?= $task['id']; ?>">
-                <input class="btn btn-success btn-block" type="submit" name="update" value="Update">
+                <div class="form-group">
+                    <input type="hidden" name="id" value="<?= $task['id']; ?>">
+                    <input class="btn btn-success btn-block" type="submit" name="update" value="Update">
+                </div>
             </form>
-
+            <a href="home.php"><input class="btn btn-default btn-block" value="Cancel"></a>
         </div>
     </div>
 </div>

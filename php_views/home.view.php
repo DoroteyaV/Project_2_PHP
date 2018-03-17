@@ -34,18 +34,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($tasks as $task): ?>
-                        <?php $flag = get_flag($task['due_date'], $type); ?>
-                        <?php if ($flag != NULL): ?>
+                    <?php if (!empty($tasks)): ?>
+                        <?php foreach ($tasks as $task): ?>
+                            <?php $flag = get_flag($task['due_date'], $type); ?>
+                            <?php if ($flag != NULL): ?>
+                            <tr>
+                                <td><?= $task['task_title']; ?></td>
+                                <td><?= $task['task_description']; ?></td>
+                                <td><?= $task['due_date']; ?></td>
+                                <td><?= $flag; ?></td>
+                                <td><?= get_buttons($flag, $task['id']); ?></td>
+                            </tr>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php else: ?>
                         <tr>
-                            <td><?= $task['task_title']; ?></td>
-                            <td><?= $task['task_description']; ?></td>
-                            <td><?= $task['due_date']; ?></td>
-                            <td><?= $flag; ?></td>
-                            <td><?= get_buttons($flag, $task['id']); ?></td>
+                            <td colspan="5">You don't have any scheduled tasks...
+                            <a href="create.php" title="Add New Task"> Add New Task Today!</a></td>
                         </tr>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
+                    <?php endif; ?>
                     </tbody>
                 </table>
             </div>
@@ -60,5 +67,11 @@
         </select>
     </div>
 </div>
+
+<?php foreach ($tasks as $task): ?>
+    <?php if ($flag != NULL): ?>
+        <?php include 'php_includes/modal.php'; ?>
+    <?php endif; ?>
+<?php endforeach; ?>
 
 <?php include 'php_includes/footer.php'; ?>

@@ -5,7 +5,6 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3 well">
-
             <form action="create.php" method="post">
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -19,9 +18,11 @@
                     <label for="date">Due Date (format "yyyy-mm-dd")</label>
                     <input id="date" class="form-control" name="due_date" placeholder="yyyy-mm-dd" required>
                 </div>
-                <input class="btn btn-primary btn-block" type="submit" name="submit" value="Create">
+                <div class="form-group">
+                    <input class="btn btn-primary btn-block" type="submit" name="submit" value="Create">
+                </div>
             </form>
-
+            <a href="home.php"><input class="btn btn-default btn-block" value="Cancel"></a>
         </div>
     </div>
 </div>
