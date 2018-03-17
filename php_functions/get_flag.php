@@ -6,7 +6,7 @@ function get_flag($due_date, $type)
     $due = (int) preg_replace("(-)", "", $due_date);
 
     if ($today == $due) {
-        $flag = 'TODAY';
+        $flag = '<span class="text-danger"><strong>TODAY</strong></span>';
         if ($type == 2 || $type == 0 || $type == NULL){
             return $flag;
         }
@@ -16,12 +16,12 @@ function get_flag($due_date, $type)
             return $flag;
         }
     } elseif ($today + 7 >= $due) {
-        $flag = 'COMING UP';
+        $flag = '<span class="text-warning"><strong>COMING UP</strong></span>';
         if ($type == 3 || $type == 0 || $type == NULL){
             return $flag;
         }
     } else {
-        $flag = 'APPROACHING';
+        $flag = '<span class="text-info"><strong>APPROACHING</strong></span>';
         if ($type == 4 || $type == 0 || $type == NULL){
             return $flag;
         }

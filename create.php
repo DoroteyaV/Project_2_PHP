@@ -13,7 +13,7 @@ if (!empty($_POST['submit'])) {
 	$task_description = $_POST['task_description'];
 	$due_date = $_POST['due_date'];
 
-	$insert_query = "INSERT INTO tasks (user_id, task_title, task_description, due_date) VALUES ($user_id, '".$task_title."', '".$task_description."', '".$due_date."')";
+	$insert_query = "INSERT INTO tasks (user_id, task_title, task_description, due_date) VALUES ($user_id, '".$task_title."', '".$task_description."', '".$due_date."');";
 	$result = mysqli_query($conn, $insert_query);
 
 	if ($result) { header("Location: home.php"); }
