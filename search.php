@@ -18,7 +18,7 @@ if(isset($_GET['search']))
 	$query = preg_replace("#[^0-9a-z]#i", "", $search_query);
 
     $query = htmlspecialchars($query);
-    $query = mysqli_real_escape_string($query);
+    $query = mysqli_real_escape_string($conn, $query);
 
     $sql = "SELECT * FROM `tasks` WHERE ((`task_title` LIKE '%".$query."%')
         OR (`task_description` LIKE '%".$query."%'))

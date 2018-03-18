@@ -11,10 +11,10 @@ if (!empty($_POST['update']))
     $id = $_POST['id'];
 	$title = $_POST['task_title'];
     $title = htmlspecialchars($title);
-    $title = mysqli_real_escape_string($title);
+    $title = mysqli_real_escape_string($conn, $title);
 	$desc = $_POST['task_description'];
     $desc = htmlspecialchars($desc);
-    $desc = mysqli_real_escape_string($desc);
+    $desc = mysqli_real_escape_string($conn, $desc);
 	$due = $_POST['due_date'];
 
     $sql = "UPDATE calendar.tasks SET task_title='".$title."', task_description='".$desc."', due_date='".$due."' WHERE id = $id;";
