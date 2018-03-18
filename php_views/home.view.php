@@ -1,10 +1,10 @@
 <?php include 'php_includes/header.php'; ?>
 
-<h1 class="text-center">Hello, <?= $_SESSION['usr_name']; ?>!</h1>
+<h1 class="text-center"><?= $_SESSION['usr_name']; ?>'s Calendar</h1>
 <!-- SEARCH AREA -->
-<form class="navbar-form pull-right" role="search">
+<form action="search.php" class="navbar-form pull-right" role="search">
     <div class="input-group add-on">
-        <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+        <input class="form-control" placeholder="Search" name="search" type="text">
         <div class="input-group-btn">
             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
         </div>
